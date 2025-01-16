@@ -7,7 +7,10 @@
   --background: #EFEFF3;
   --text: #696986;
   --accent: #C6C3D6;
+  --accent-light: #d9d7e6;
   --dark: #0E0923;
+  --border-opacity-20: #0E092314;
+  --border-opacity-30: #0E09234D;
 }
 
 @media (prefers-color-scheme: light) {
@@ -19,13 +22,27 @@
   }
 }
 
-body {
-  color: var(--text);
-  background: var(--background);
-  font-family: 'Hanken Grotesk', sans-serif;
+/* CUSTOM UTILITIES */
+.hover-container {
+  background: var(--accent);
+  border: 2px solid var(--border-opacity-20);
+}
+
+.hover-container:hover,
+.hover-container:focus,
+.hover-container:active,
+.hover-container.active {
+  background: var(--accent-light);
+  border: 2px solid var(--border-opacity-30);
 }
 
 @layer base {
+  body {
+    color: var(--text);
+    background: var(--background);
+    font-family: 'Hanken Grotesk', sans-serif;
+  }
+
   h1 {
     @apply text-7xl font-bold;
   }
