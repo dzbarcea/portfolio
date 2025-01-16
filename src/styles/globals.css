@@ -29,7 +29,6 @@
 }
 
 .hover-container:hover,
-.hover-container:focus,
 .hover-container:active,
 .hover-container.active {
   background: var(--accent-light);

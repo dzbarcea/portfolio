@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect, useRef, useState} from 'react';
 import ToggleButton from '@/components/ToggleButton/ToggleButton';
 
 const images = [
@@ -9,23 +9,50 @@ const images = [
     },
     {
         text: 'Cooking',
-        alt: 'Music img',
+        alt: 'Cooking img',
         src: 'music.jpg'
     },
     {
         text: 'Bouldering',
-        alt: 'Music img',
+        alt: 'Bouldering img',
         src: 'music.jpg'
     },
 ];
 
+const defaultImgPath = '/cat-image.png';
+const defaultImgAlt = 'Cat Image';
+
 const ImageController = () => {
     const [activeIndex, setActiveIndex] = useState<number | undefined>(undefined);
-    const defaultImgPath = '/cat-image.png';
-    const defaultImgAlt = 'Cat Image';
+    const [imgSrc, setImgSrc] = useState(defaultImgPath);
+    const [imgAlt, setImgAlt] = useState(defaultImgAlt)
+    const imgRef = useRef<HTMLImageElement | null>(null);
 
-    const resetActiveIndex = () => {
+    useEffect(() => {
+        console.log(activeIndex);
+    }, [activeIndex]);
+
+    const toggleOn = (index: number) => {
+        const image = images[index];
+        setActiveIndex(index);
+        setImgSrc(image.src);
+        setImgAlt(image.alt);
+
+        // TODO: scroll img into view
+        if (imgRef.current) {
+            imgRef.current.scrollIntoView();
+        }
+    }
+
+    const toggleOff = () => {
         setActiveIndex(undefined);
+        setImgSrc(defaultImgPath);
+        setImgAlt(defaultImgAlt);
+
+        // TODO: scroll img into view
+        if (imgRef.current) {
+            imgRef.current.scrollIntoView();
+        }
     }
 
     return (
@@ -34,16 +61,18 @@ const ImageController = () => {
                 {images.map((image, index) => (
                     <ToggleButton
                         key={index}
-                        onToggleOn={() => setActiveIndex(index)}
-                        onToggleOff={resetActiveIndex}
+                        onToggleOn={() => toggleOn(index)}
+                        onToggleOff={() => toggleOff()}
+                        isActive={activeIndex === index}
                     >
                         {image.text}
                     </ToggleButton>
                 ))}
             </div>
             <img
-                src={activeIndex ? images[activeIndex].src : defaultImgPath}
-                alt={activeIndex ? images[activeIndex].alt : defaultImgAlt}
+                ref={imgRef}
+                src={imgSrc}
+                alt={imgAlt}
             />
         </>
     );
