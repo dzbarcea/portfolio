@@ -38,7 +38,6 @@ const ImageController = () => {
         setImgSrc(image.src);
         setImgAlt(image.alt);
 
-        // TODO: scroll img into view
         if (imgRef.current) {
             imgRef.current.scrollIntoView();
         }
@@ -49,7 +48,6 @@ const ImageController = () => {
         setImgSrc(defaultImgPath);
         setImgAlt(defaultImgAlt);
 
-        // TODO: scroll img into view
         if (imgRef.current) {
             imgRef.current.scrollIntoView();
         }
