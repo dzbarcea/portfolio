@@ -8,7 +8,7 @@ interface NavLinkProps {
 
 const NavLink = ({ children, to, active=false }: NavLinkProps) => {
     return (
-        <a href={to} className={`hover-container px-4 py-2 font-semibold rounded-full ${active && 'active'}`}>
+        <a href={to} className={`hover-container px-4 py-2 text-sm font-semibold rounded-full ${active && 'active'}`}>
             {children}
         </a>
     );

@@ -43,11 +43,19 @@
     font-family: 'Hanken Grotesk', sans-serif;
   }
 
+  #__next {
+    height: 100vh;
+  }
+
   h1 {
     @apply text-7xl font-bold;
   }
 
   h2 {
     @apply text-2xl font-extralight text-dark;
+  }
+
+  p {
+    font-size: 1.25rem;
   }
 }
