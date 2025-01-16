@@ -71,6 +71,7 @@ const ImageController = () => {
                 ref={imgRef}
                 src={imgSrc}
                 alt={imgAlt}
+                className='rounded-lg'
             />
         </>
     );

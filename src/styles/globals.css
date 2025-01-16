@@ -6,11 +6,11 @@
 :root {
   --background: #EFEFF3;
   --text: #696986;
-  --accent: #C6C3D6;
-  --accent-light: #d9d7e6;
+  --accent: #d8d8e8;
+  --accent-darker: #c5c5dc;
   --dark: #0E0923;
-  --border-opacity-20: #0E092314;
-  --border-opacity-30: #0E09234D;
+  --border-opacity-10: #0E09231A;
+  --border-opacity-20: #0E092333;
 }
 
 @media (prefers-color-scheme: light) {
@@ -25,14 +25,14 @@
 /* CUSTOM UTILITIES */
 .hover-container {
   background: var(--accent);
-  border: 2px solid var(--border-opacity-20);
+  border: 2px solid var(--border-opacity-10);
 }
 
 .hover-container:hover,
 .hover-container:active,
 .hover-container.active {
-  background: var(--accent-light);
-  border: 2px solid var(--border-opacity-30);
+  background: var(--accent-darker);
+  border: 2px solid var(--border-opacity-20);
 }
 
 @layer base {
