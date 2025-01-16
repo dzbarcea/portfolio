@@ -1,8 +1,8 @@
+import Layout from '../layouts/Layout';
+
 const Index = () => {
     return (
-        <div>
-            Home Page
-        </div>
+        <Layout />
     );
 }
 
