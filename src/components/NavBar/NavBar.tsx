@@ -1,3 +1,5 @@
+'use client';
+
 import NavLink from '@/components/NavBar/NavLink';
 import {useEffect, useState} from 'react';
 
