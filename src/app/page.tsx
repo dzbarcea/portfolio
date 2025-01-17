@@ -1,9 +1,8 @@
-import Layout from '../layouts/Layout';
 import ImageController from '@/components/ImageController/ImageController';
 
-const Index = () => {
+const Page = () => {
     return (
-        <Layout>
+        <>
             <p>Hi, I’m David. I’m passionate about writing clean, efficient code and designing user experiences that
                 satisfy and engage.</p>
             <p>With 2 years of experience in Fullstack Development and UI/UX Design, I thrive in fast-paced,
@@ -11,9 +10,9 @@ const Index = () => {
             <p>I learn lessons from everything I do. They shape who I am and how I approach my work. Check out some
                 of my favorite interests below:</p>
 
-            <ImageController />
-        </Layout>
+            <ImageController/>
+        </>
     );
 }
 
-export default Index;
+export default Page;

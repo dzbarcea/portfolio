@@ -8,6 +8,8 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
     return (
+        <html>
+        <body>
         <div className='flex flex-col pt-16 px-6 gap-4 h-full overflow-hidden'>
             <div className='mb-4'>
                 <h1>David Zbarcea</h1>
@@ -20,6 +22,8 @@ const Layout = ({ children }: LayoutProps) => {
                 {children}
             </div>
         </div>
+        </body>
+        </html>
     );
 }
 
