@@ -40,12 +40,9 @@
     color: var(--text);
     background: var(--background);
     font-family: 'Hanken Grotesk', sans-serif;
-  }
-
-  #__next {
     height: 100vh;
   }
-
+  
   h1 {
     @apply text-7xl font-bold;
   }
