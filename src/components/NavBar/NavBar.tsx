@@ -1,7 +1,4 @@
-'use client';
-
 import NavLink from '@/components/NavBar/NavLink';
-import {useEffect, useState} from 'react';
 
 const pages = [
     {
@@ -23,16 +20,10 @@ const pages = [
 ];
 
 const NavBar = () => {
-    const [currentPage, setCurrentPage] = useState('');
-
-    useEffect(() => {
-        setCurrentPage(window.location.pathname);
-    }, []);
-
     return (
         <div className='flex gap-2'>
             {pages.map((page) => (
-                <NavLink key={page.text} to={page.to} active={currentPage === page.to}>{page.text}</NavLink>
+                <NavLink key={page.text} to={page.to}>{page.text}</NavLink>
             ))}
         </div>
     );

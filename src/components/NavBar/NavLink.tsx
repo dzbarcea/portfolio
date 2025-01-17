@@ -1,16 +1,21 @@
+'use client';
+
 import {ReactNode} from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 interface NavLinkProps {
     children?: ReactNode;
     to: string;
-    active?: boolean;
 }
 
-const NavLink = ({ children, to, active=false }: NavLinkProps) => {
+const NavLink = ({ children, to }: NavLinkProps) => {
+    const pathname = usePathname();
+
     return (
-        <a href={to} className={`hover-container px-4 py-2 text-sm font-semibold rounded-full ${active && 'active'}`}>
+        <Link href={to} className={`hover-container px-4 py-2 text-sm font-semibold rounded-full ${pathname === to && 'active'}`}>
             {children}
-        </a>
+        </Link>
     );
 }
 

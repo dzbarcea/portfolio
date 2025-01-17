@@ -42,7 +42,7 @@
     font-family: 'Hanken Grotesk', sans-serif;
     height: 100vh;
   }
-  
+
   h1 {
     @apply text-7xl font-bold;
   }
