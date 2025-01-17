@@ -18,7 +18,7 @@ const Layout = ({ children }: LayoutProps) => {
             <NavBar/>
 
             {/* Main Content */}
-            <div className='flex flex-col flex-1 gap-4 mb-6 overflow-y-scroll'>
+            <div className='flex flex-col flex-1 gap-4 overflow-y-auto'>
                 {children}
             </div>
         </div>

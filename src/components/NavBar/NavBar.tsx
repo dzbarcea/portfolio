@@ -21,7 +21,7 @@ const pages = [
 
 const NavBar = () => {
     return (
-        <div className='flex gap-2'>
+        <div className='flex gap-2 overflow-x-auto no-scrollbar'>
             {pages.map((page) => (
                 <NavLink key={page.text} to={page.to}>{page.text}</NavLink>
             ))}
