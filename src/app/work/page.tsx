@@ -25,13 +25,15 @@ const Page = () => {
                 <div className='flex flex-col gap-2'>
                     <h3>Projects</h3>
                     <ul>
-                        {projects.map(project => (
-                            <li key={project.title} className='flex flex-col gap-1 hover-container p-4 rounded-lg'>
-                                <div className='flex justify-between'>
-                                    <h4 className='font-bold'>{project.title}</h4>
-                                    <h4>{project.date}</h4>
-                                </div>
-                                <p>{project.description}</p>
+                        {Object.keys(projects).map((project, index) => (
+                            <li key={index} className='flex flex-col gap-1 hover-container p-4 rounded-lg'>
+                                <a href={`/work/projects/${project}`}>
+                                    <div className='flex justify-between'>
+                                        <h4 className='font-bold'>{projects[project].title}</h4>
+                                        <h4>{projects[project].date}</h4>
+                                    </div>
+                                    <p>{projects[project].description}</p>
+                                </a>
                             </li>
                         ))}
                     </ul>

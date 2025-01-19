@@ -13,6 +13,7 @@ export interface Project {
     description: string;
     imgSrc: string;
     date: string;
+    slug: string;
 }
 
 export const sections: Section[] = [
@@ -54,11 +55,12 @@ export const sections: Section[] = [
     },
 ];
 
-export const projects: Project[] = [
-    {
+export const projects: Record<string, Project> = {
+    'idols': {
         title: 'Idols.gg',
         description: 'Compete against others in predicting the outcome of tournament stats',
         imgSrc: '/idolsgg',
-        date: '2023'
-    }
-];
+        date: '2023',
+        slug: 'idols'
+    },
+}

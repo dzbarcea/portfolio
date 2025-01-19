@@ -3,7 +3,7 @@ import NavLink from '@/components/NavBar/NavLink';
 const pages = [
     {
         text: 'About',
-        to: '/'
+        to: '/about'
     },
     {
         text: 'Work',
