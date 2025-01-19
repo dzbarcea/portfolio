@@ -1,4 +1,4 @@
-import ImageController from '@/components/ImageController/ImageController';
+// import ImageController from '@/components/ImageController/ImageController';
 
 const Page = () => {
     return (
@@ -10,7 +10,7 @@ const Page = () => {
             <p>I learn lessons from everything I do. They shape who I am and how I approach my work. Check out some
                 of my favorite interests below:</p>
 
-            <ImageController/>
+            {/*<ImageController/>*/}
         </>
     );
 }

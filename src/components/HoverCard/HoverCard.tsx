@@ -6,7 +6,7 @@ interface HoverCardProps {
 
 const HoverCard = ({ children }: HoverCardProps) => {
     return (
-        <div className='hover-container rounded-lg'>
+        <div className='border-container hoverable rounded-lg'>
             {children}
         </div>
     );

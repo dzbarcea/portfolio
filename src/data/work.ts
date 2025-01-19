@@ -91,6 +91,7 @@ export const projects: Record<string, Project> = {
         slug: 'idols',
         relatedSkills: [
             Skills.JAVASCRIPT,
+            Skills.MONGODB
         ],
     },
 }

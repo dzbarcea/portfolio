@@ -1,8 +1,21 @@
+'use client';
 import { Icon } from '@iconify/react';
 import { sections, projects  } from '@/data/work';
 import Link from 'next/link';
+import {useState} from 'react';
 
 const Page = () => {
+    const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
+    const [hovering, setHovering] = useState<string | undefined>(undefined);
+
+    const handleMouseEnter = (itemName: string) => {
+        setHovering(itemName);
+    }
+
+    const handleMouseLeave = () => {
+        setHovering(undefined);
+    }
+
     return (
         <>
             <div className='flex flex-col gap-2'>
@@ -13,7 +26,12 @@ const Page = () => {
                             <h4>{section.title}</h4>
                             <ul className='grid grid-cols-3 gap-2'>
                                 {section.items.map((item) => (
-                                    <li key={item.name} className='hover-container p-2 rounded-lg'>
+                                    <li
+                                        key={item.name}
+                                        className='container clickable p-2 rounded-lg'
+                                        onMouseEnter={() => handleMouseEnter(item.name)}
+                                        onMouseLeave={handleMouseLeave}
+                                    >
                                         <Icon icon={item.icon} className='text-2xl'/>
                                     </li>
                                 ))}
@@ -26,9 +44,15 @@ const Page = () => {
                 <div className='flex flex-col gap-2'>
                     <h3>Projects</h3>
                     <ul>
-                        {Object.keys(projects).map((project, index) => (
-                            <li key={index} className='flex flex-col gap-1 hover-container p-4 rounded-lg'>
-                                <Link href={`/work/projects/${project}`}>
+                        {Object.keys(projects).map((project, index) => {
+                            const isHighlighted = projects[project].relatedSkills.some(item => item.name === hovering);
+
+                            return (
+                            <li key={index}>
+                                <Link
+                                    href={`/work/projects/${project}`}
+                                    className={`flex flex-col gap-1 border-container clickable p-4 rounded-lg ${isHighlighted && 'highlighted'}`}
+                                >
                                     <div className='flex justify-between'>
                                         <h4 className='font-bold'>{projects[project].title}</h4>
                                         <h4>{projects[project].date}</h4>
@@ -36,7 +60,7 @@ const Page = () => {
                                     <p>{projects[project].description}</p>
                                 </Link>
                             </li>
-                        ))}
+                        )})}
                     </ul>
                 </div>
             </div>

@@ -22,7 +22,7 @@ const ToggleButton = ({ onToggleOn, onToggleOff, children, isActive=false }: Tog
             role='switch'
             aria-checked={isActive}
             onClick={handleClick}
-            className={`hover-container rounded-md py-1.5 px-3 text-sm ${isActive && 'active'}`}
+            className={`border-container rounded-md py-1.5 px-3 text-sm ${isActive && 'active'}`}
         >
             {children}
         </button>

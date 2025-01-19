@@ -5,34 +5,34 @@
 
 :root {
   --background: #EFEFF3;
-  --text: #696986;
   --accent: #d8d8e8;
   --accent-darker: #c5c5dc;
+  --accent-saturated: #CECEEF;
   --dark: #0E0923;
+  --highlight: #9775F3;
+
+  /* TEXT COLORS */
+  --text: #696986;
+  --text-faded: #69698680;
+
+  /* BORDER COLORS */
   --border-opacity-10: #0E09231A;
   --border-opacity-20: #0E092333;
+
+  /* GRADIENTS */
+  --light-gradient: linear-gradient(174deg, var(--accent), var(--accent-saturated));
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     --background: #EFEFF3;
     --text: #696986;
-    --accent: #C6C3D6;
+    --accent: #d8d8e8;
+    --accent-darker: #c5c5dc;
     --dark: #0E0923;
+    --border-opacity-10: #0E09231A;
+    --border-opacity-20: #0E092333;
   }
-}
-
-/* CUSTOM UTILITIES */
-.hover-container {
-  background: var(--accent);
-  border: 1px solid var(--border-opacity-10);
-}
-
-.hover-container:hover,
-.hover-container:active,
-.hover-container.active {
-  background: var(--accent-darker);
-  border: 1px solid var(--border-opacity-20);
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -76,5 +76,39 @@
 
   .flex-between {
     @apply flex justify-between;
+  }
+
+
+  /* CLICKABLE & HOVERABLE ELEMENTS */
+
+  .container {
+    border: 1px solid transparent;
+  }
+
+  .border-container {
+    background: var(--accent);
+    border: 1px solid var(--border-opacity-10);
+  }
+
+  .faded {
+    opacity: 0.75;
+    background: var(--accent);
+  }
+
+  .border-container.hoverable:hover,
+  .border-container.clickable.selected,
+  .container.hoverable:hover,
+  .container.clickable.selected
+  {
+    background: var(--accent-darker);
+    border: 1px solid var(--border-opacity-20);
+  }
+
+  .border-container.clickable:hover,
+  .container.clickable:hover,
+  .highlighted
+  {
+    background: var(--light-gradient);
+    border: 1px solid var(--highlight);
   }
 }
