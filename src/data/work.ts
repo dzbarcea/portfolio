@@ -15,43 +15,68 @@ export interface Project {
     imgAlt: string;
     date: string;
     slug: string;
+    relatedSkills: SkillItem[];
+}
+
+export const Skills: Record<string, SkillItem> = {
+    // Languages
+    TYPESCRIPT: {name: 'TypeScript', icon: 'skill-icons:typescript'},
+    JAVASCRIPT: {name: 'JavaScript', icon: 'skill-icons:javascript'},
+    HTML: {name: 'HTML', icon: 'skill-icons:html'},
+    CSS: {name: 'CSS', icon: 'skill-icons:css'},
+    PYTHON: {name: 'Python', icon: 'skill-icons:python-dark'},
+    JAVA: {name: 'Java', icon: 'skill-icons:java-dark'},
+
+    // Frontend
+    REACT: {name: 'React', icon: 'skill-icons:react-dark'},
+    NODE: {name: 'Node', icon: 'skill-icons:nodejs-dark'},
+    NEXTJS: {name: 'Next.js', icon: 'skill-icons:nextjs-dark'},
+    SVELTE: {name: 'Svelte', icon: 'skill-icons:svelte'},
+    TAILWIND: {name: 'Tailwind', icon: 'skill-icons:tailwindcss-dark'},
+
+    // Backend
+    EXPRESS: {name: 'Express', icon: 'skill-icons:expressjs-dark'},
+    MONGODB: {name: 'MongoDB', icon: 'skill-icons:mongodb'},
+
+    // Tools
+    GIT: {name: 'Git', icon: 'skill-icons:git'},
+    FIGMA: {name: 'Figma', icon: 'skill-icons:figma-dark'},
 }
 
 export const sections: Section[] = [
     {
         title: 'Languages',
         items: [
-            {name: 'TypeScript', icon: 'skill-icons:typescript'},
-            {name: 'JavaScript', icon: 'skill-icons:javascript'},
-            {name: 'HTML', icon: 'skill-icons:html'},
-            {name: 'CSS', icon: 'skill-icons:css'},
-            {name: 'Python', icon: 'skill-icons:python-dark'},
-            {name: 'Java', icon: 'skill-icons:java-dark'},
+            Skills.TYPESCRIPT,
+            Skills.JAVASCRIPT,
+            Skills.HTML,
+            Skills.CSS,
+            Skills.PYTHON,
+            Skills.JAVA
         ]
     },
     {
         title: 'Frontend',
         items: [
-            {name: 'React', icon: 'skill-icons:react-dark'},
-            {name: 'Node', icon: 'skill-icons:nodejs-dark'},
-            {name: 'Next.js', icon: 'skill-icons:nextjs-dark'},
-            {name: 'Svelte', icon: 'skill-icons:svelte'},
-            {name: 'Tailwind', icon: 'skill-icons:tailwindcss-dark'},
-
+            Skills.REACT,
+            Skills.NODE,
+            Skills.NEXTJS,
+            Skills.SVELTE,
+            Skills.TAILWIND
         ]
     },
     {
         title: 'Backend',
         items: [
-            {name: 'Express', icon: 'skill-icons:expressjs-dark'},
-            {name: 'MongoDB', icon: 'skill-icons:mongodb'},
+            Skills.EXPRESS,
+            Skills.MONGODB
         ]
     },
     {
         title: 'Tools',
         items: [
-            {name: 'Git', icon: 'skill-icons:git'},
-            {name: 'Figma', icon: 'skill-icons:figma-dark'},
+            Skills.GIT,
+            Skills.FIGMA
         ]
     },
 ];
@@ -63,6 +88,9 @@ export const projects: Record<string, Project> = {
         imgSrc: '/idolsgg',
         imgAlt: `Idols.gg Pick'ems page`,
         date: '2023',
-        slug: 'idols'
+        slug: 'idols',
+        relatedSkills: [
+            Skills.JAVASCRIPT,
+        ],
     },
 }
