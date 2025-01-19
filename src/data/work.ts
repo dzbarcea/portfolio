@@ -12,6 +12,7 @@ export interface Project {
     title: string;
     description: string;
     imgSrc: string;
+    imgAlt: string;
     date: string;
     slug: string;
 }
@@ -60,6 +61,7 @@ export const projects: Record<string, Project> = {
         title: 'Idols.gg',
         description: 'Compete against others in predicting the outcome of tournament stats',
         imgSrc: '/idolsgg',
+        imgAlt: `Idols.gg Pick'ems page`,
         date: '2023',
         slug: 'idols'
     },
