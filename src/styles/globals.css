@@ -90,14 +90,17 @@
     border: 1px solid var(--border-opacity-10);
   }
 
-  .faded {
-    opacity: 0.75;
-    background: var(--accent);
+  .faded:not(.selected,:hover) {
+    opacity: 0.5;
   }
 
-  .border-container.hoverable:hover,
+  .clickable {
+    cursor: pointer;
+  }
+
+  .border-container:hover,
   .border-container.clickable.selected,
-  .container.hoverable:hover,
+  .container:hover,
   .container.clickable.selected
   {
     background: var(--accent-darker);
