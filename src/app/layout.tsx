@@ -8,21 +8,27 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
     return (
-        <html>
-        <body>
-        <div className='flex flex-col pt-16 px-6 gap-4 h-full overflow-hidden'>
-            <div className='mb-4'>
-                <h1>David Zbarcea</h1>
-                <h2>Fullstack Developer & UI Designer</h2>
-            </div>
-            <NavBar/>
+        <html lang='en'>
 
-            {/* Main Content */}
-            <div className='flex flex-col flex-1 gap-4 overflow-y-auto'>
-                {children}
+        <head>
+            <title>David Zbarcea</title>
+        </head>
+
+        <body>
+            <div className='flex flex-col pt-16 px-6 gap-4 h-full overflow-hidden'>
+                <div className='mb-4'>
+                    <h1>David Zbarcea</h1>
+                    <h2>Fullstack Developer & UI Designer</h2>
+                </div>
+                <NavBar/>
+
+                {/* Main Content */}
+                <div className='flex flex-col flex-1 gap-4 overflow-y-auto'>
+                    {children}
+                </div>
             </div>
-        </div>
         </body>
+
         </html>
     );
 }
