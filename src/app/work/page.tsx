@@ -47,7 +47,23 @@ const sections: Section[] = [
             {name: 'Figma', icon: 'skill-icons:figma-dark'},
         ]
     },
-]
+];
+
+interface Project {
+    title: string;
+    description: string;
+    imgSrc: string;
+    date: string;
+}
+
+const projects: Project[] = [
+    {
+        title: 'Idols.gg',
+        description: 'Compete against others in predicting the outcome of tournament stats',
+        imgSrc: '/idolsgg',
+        date: '2023'
+    }
+];
 
 const Page = () => {
     return (
@@ -70,7 +86,20 @@ const Page = () => {
                 </div>
             </div>
             <div>
-                <h3>Projects</h3>
+                <div className='flex flex-col gap-2'>
+                    <h3>Projects</h3>
+                    <ul>
+                        {projects.map(project => (
+                            <li key={project.title} className='flex flex-col gap-1 hover-container p-4 rounded-lg'>
+                                <div className='flex justify-between'>
+                                    <h4 className='font-bold'>{project.title}</h4>
+                                    <h4>{project.date}</h4>
+                                </div>
+                                <p>{project.description}</p>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             </div>
         </>
     );

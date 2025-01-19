@@ -70,7 +70,11 @@
     @apply text-xl font-light;
   }
 
-  p {
-    font-size: 1.25rem;
+  h5 {
+    @apply text-sm font-light;
+  }
+
+  .flex-between {
+    @apply flex justify-between;
   }
 }
