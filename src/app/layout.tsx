@@ -15,7 +15,7 @@ const Layout = ({ children }: LayoutProps) => {
         </head>
 
         <body>
-            <div className='flex flex-col pt-16 px-6 gap-4 h-full overflow-hidden'>
+            <div className='flex flex-col pt-16 px-6 gap-2 h-full overflow-hidden'>
                 <div className='mb-4'>
                     <h1>David Zbarcea</h1>
                     <h2>Fullstack Developer & UI Designer</h2>

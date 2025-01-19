@@ -25,14 +25,14 @@
 /* CUSTOM UTILITIES */
 .hover-container {
   background: var(--accent);
-  border: 2px solid var(--border-opacity-10);
+  border: 1px solid var(--border-opacity-10);
 }
 
 .hover-container:hover,
 .hover-container:active,
 .hover-container.active {
   background: var(--accent-darker);
-  border: 2px solid var(--border-opacity-20);
+  border: 1px solid var(--border-opacity-20);
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -55,7 +55,7 @@
   }
 
   h1 {
-    @apply text-6xl font-bold;
+    @apply text-6xl font-black;
   }
 
   h2 {

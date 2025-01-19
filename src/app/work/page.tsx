@@ -1,5 +1,6 @@
 import { Icon } from '@iconify/react';
 import { sections, projects  } from '@/data/work';
+import Link from 'next/link';
 
 const Page = () => {
     return (
@@ -27,13 +28,13 @@ const Page = () => {
                     <ul>
                         {Object.keys(projects).map((project, index) => (
                             <li key={index} className='flex flex-col gap-1 hover-container p-4 rounded-lg'>
-                                <a href={`/work/projects/${project}`}>
+                                <Link href={`/work/projects/${project}`}>
                                     <div className='flex justify-between'>
                                         <h4 className='font-bold'>{projects[project].title}</h4>
                                         <h4>{projects[project].date}</h4>
                                     </div>
                                     <p>{projects[project].description}</p>
-                                </a>
+                                </Link>
                             </li>
                         ))}
                     </ul>
