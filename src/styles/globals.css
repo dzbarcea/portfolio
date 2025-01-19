@@ -55,7 +55,7 @@
   }
 
   h1 {
-    @apply text-7xl font-bold;
+    @apply text-6xl font-bold;
   }
 
   h2 {
