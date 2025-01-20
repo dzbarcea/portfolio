@@ -2,8 +2,8 @@ import {Icon} from '@iconify/react';
 
 const Page = () => {
     return (
-        <div className='flex flex-col flex-1 gap-4 overflow-y-auto lg:flex-row'>
-            <div className='flex flex-col gap-2 items-start lg:flex-1'>
+        <div className='flex flex-col flex-1 gap-4 overflow-y-auto md:flex-row'>
+            <div className='flex flex-col gap-2 items-start md:flex-1'>
                 <h3>Email</h3>
 
                 <div className='border-container rounded-lg hover:highlighted cursor-default'>
@@ -14,7 +14,7 @@ const Page = () => {
                 </div>
             </div>
 
-            <div className='flex flex-col gap-2 items-start lg:flex-1'>
+            <div className='flex flex-col gap-2 items-start md:flex-1'>
                 <h3>Social Media</h3>
 
                 <div className='flex flex-wrap gap-2 items-start'>

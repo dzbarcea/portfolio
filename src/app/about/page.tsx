@@ -2,7 +2,7 @@
 
 const Page = () => {
     return (
-        <>
+        <div className='flex flex-col gap-2 pt-4 text-xl lg:w-1/2'>
             <p>Hi, I’m David. I’m passionate about writing clean, efficient code and designing user experiences that
                 satisfy and engage.</p>
             <p>With 2 years of experience in Fullstack Development and UI/UX Design, I thrive in fast-paced,
@@ -11,7 +11,7 @@ const Page = () => {
                 of my favorite interests below:</p>
 
             {/*<ImageController/>*/}
-        </>
+        </div>
     );
 }
 

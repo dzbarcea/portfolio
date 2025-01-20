@@ -4,12 +4,12 @@
 @tailwind utilities;
 
 :root {
-  --background: #EFEFF3;
+  --background: #EFEFF3; /* #EFEFF3 */
   --accent: #e3e3ef;
-  --accent-darker: #ced1e6;
-  --accent-saturated: #e2ddff;
+  --accent-darker: #cbcedc;
+  --accent-saturated: #d3ceff;
   --dark: #0E0923;
-  --highlight: #e0d1ff;
+  --highlight: #cac4ff;
 
   /* TEXT COLORS */
   --text: #696986;
@@ -55,11 +55,11 @@
   }
 
   h1 {
-    @apply text-6xl font-black;
+    @apply text-6xl font-black lg:text-7xl;
   }
 
   h2 {
-    @apply text-2xl font-extralight text-dark;
+    @apply text-2xl font-extralight text-dark lg:text-3xl;
   }
 
   h3 {
