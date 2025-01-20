@@ -23,9 +23,7 @@ const Layout = ({ children }: LayoutProps) => {
                 <NavBar/>
 
                 {/* Main Content */}
-                <div className='flex flex-col flex-1 gap-4 overflow-x-hidden'>
-                    {children}
-                </div>
+                {children}
             </div>
         </body>
 

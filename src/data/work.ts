@@ -84,7 +84,7 @@ export const projects: Record<string, Project> = {
     'idols': {
         title: 'Idols.gg',
         description: 'Compete against others in predicting the outcome of tournament stats',
-        imgSrc: '/idolsgg',
+        imgSrc: '/images/idolsgg.png',
         imgAlt: `Idols.gg Pick'ems page`,
         date: '2023',
         relatedSkills: [
@@ -134,10 +134,10 @@ export const projects: Record<string, Project> = {
         ],
     },
     'portfolio': {
-        title: 'Actify',
-        description: 'Improve motivation & get things done using the principle of Intentional Binding',
-        imgSrc: '/actify',
-        imgAlt: `Actify action selection page`,
+        title: 'Portfolio Website',
+        description: 'The site you are viewing right now!',
+        imgSrc: '/portfolio',
+        imgAlt: `Portfolio website about page`,
         date: '2025',
         relatedSkills: [
             Skills.TYPESCRIPT,

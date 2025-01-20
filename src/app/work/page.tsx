@@ -21,7 +21,7 @@ const Page = () => {
     const handleMouseEnterSkill = (itemName: string) => {
         // Disable mouseEnter functionality on anything below a large device
         // Prevents from interfering with onClick for selecting/deselecting
-        if (windowWidth < 992) {
+        if (windowWidth < 1024) {
             return;
         }
         setHoveringSkill(itemName);
@@ -30,7 +30,7 @@ const Page = () => {
     const handleMouseLeaveSkill = () => {
         // Disable mouseLeave functionality on anything below a large device
         // Prevents from interfering with onClick for selecting/deselecting
-        if (windowWidth < 992) {
+        if (windowWidth < 1024) {
             return;
         }
         setHoveringSkill(undefined);
@@ -54,14 +54,14 @@ const Page = () => {
     }
 
     return (
-        <>
-            <div className='flex flex-col gap-2'>
+        <div className='flex flex-col flex-1 gap-4 overflow-y-auto lg:flex-row-reverse lg:overflow-y-hidden'>
+            <div className='flex flex-col gap-2 lg:flex-1'>
                 <h3>Skills</h3>
                 <div className='flex flex-wrap gap-x-8 gap-y-2'>
                     {sections.map(section => (
                         <div key={section.title} className='flex flex-col gap-1'>
                             <h4>{section.title}</h4>
-                            <ul className='grid grid-cols-3 gap-2'>
+                            <ul className='grid grid-cols-3 gap-2 xl:grid-cols-4'>
                                 {section.items.map((item) => {
                                     const isHighlighted = hoveringProjectSkills && hoveringProjectSkills.includes(item.name);
                                     const isSelected = !isHighlighted && selectedSkills.includes(item.name);
@@ -84,39 +84,40 @@ const Page = () => {
                     ))}
                 </div>
             </div>
-            <div>
-                <div className='flex flex-col gap-2 overflow-x-hidden'>
-                    <h3>Projects</h3>
-                    <ul className='flex flex-col gap-2'>
-                        {Object.keys(projects).map((project, index) => {
-                            const skillNames = Object.values(projects[project].relatedSkills).map(skill => skill.name);
+            <div className='flex flex-col gap-2 pb-8 lg:flex-[2] lg:overflow-y-auto'>
+                <h3>Projects</h3>
+                <ul className='flex flex-col gap-2 lg:grid lg:grid-cols-2'>
+                    {Object.keys(projects).map((project, index) => {
+                        const skillNames = Object.values(projects[project].relatedSkills).map(skill => skill.name);
 
-                            const isHighlighted = projects[project].relatedSkills.some(item => item.name === hoveringSkill);
-                            const isSelected = !isHighlighted && projects[project].relatedSkills.some(item => selectedSkills.includes(item.name));
-                            const isFaded = !isSelected && !isHighlighted && (hoveringSkill || selectedSkills.length > 0 || hoveringProjectSkills.length > 0);
+                        const isHighlighted = projects[project].relatedSkills.some(item => item.name === hoveringSkill);
+                        const isSelected = !isHighlighted && projects[project].relatedSkills.some(item => selectedSkills.includes(item.name));
+                        const isFaded = !isSelected && !isHighlighted && (hoveringSkill || selectedSkills.length > 0 || hoveringProjectSkills.length > 0);
 
-                            return (
-                                <li key={index}
-                                    onMouseEnter={() => handleMouseEnterProject(skillNames)}
-                                    onMouseLeave={handleMouseLeaveProject}
+                        return (
+                            <li key={index}
+                                onMouseEnter={() => handleMouseEnterProject(skillNames)}
+                                onMouseLeave={handleMouseLeaveProject}
+                            >
+                                <Link
+                                    href={`/work/projects/${project}`}
+                                    className={`flex flex-col md:items-end md:flex-row lg:items-start lg:flex-col gap-2 border-container clickable p-4 rounded-lg ${isSelected && 'selected'} ${isHighlighted && 'highlighted'} ${isFaded && 'faded'}`}
                                 >
-                                    <Link
-                                        href={`/work/projects/${project}`}
-                                        className={`flex flex-col gap-1 border-container clickable p-4 rounded-lg ${isSelected && 'selected'} ${isHighlighted && 'highlighted'} ${isFaded && 'faded'}`}
-                                    >
+                                    <img src={projects[project].imgSrc} alt={projects[project].imgAlt} className='rounded-lg aspect-[2/1] object-cover md:w-1/2 lg:w-full'/>
+                                    <div className='flex flex-col gap-1'>
                                         <div className='flex justify-between'>
                                             <h4 className='font-bold'>{projects[project].title}</h4>
                                             <h4>{projects[project].date}</h4>
                                         </div>
                                         <p>{projects[project].description}</p>
-                                    </Link>
-                                </li>
-                            );
-                        })}
-                    </ul>
-                </div>
+                                    </div>
+                                </Link>
+                            </li>
+                        );
+                    })}
+                </ul>
             </div>
-        </>
+        </div>
     );
 }
 
