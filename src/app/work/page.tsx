@@ -84,9 +84,9 @@ const Page = () => {
                     ))}
                 </div>
             </div>
-            <div className='flex flex-col gap-2 pb-8 lg:flex-[2] lg:overflow-y-auto'>
+            <div className='flex flex-col gap-2 pb-8 lg:flex-[2]'>
                 <h3>Projects</h3>
-                <ul className='flex flex-col gap-2 lg:grid lg:grid-cols-2'>
+                <ul className='flex flex-col gap-2 lg:grid lg:grid-cols-2 lg:overflow-y-auto'>
                     {Object.keys(projects).map((project, index) => {
                         const skillNames = Object.values(projects[project].relatedSkills).map(skill => skill.name);
 

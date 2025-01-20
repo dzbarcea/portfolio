@@ -1,10 +1,9 @@
 import { Icon } from '@iconify/react';
-import HoverCard from '@/components/HoverCard/HoverCard';
 import { CardInfo, educationItems, experienceItems } from '@/data/experience';
 
 const ExperienceCard = ({title, date, subtitle, description}: CardInfo) => {
     return (
-        <HoverCard>
+        <div className='border-container rounded-lg hover:highlighted'>
             <div className='flex flex-col gap-2 p-2'>
                 <div>
                     <div className='flex-between'>
@@ -16,14 +15,14 @@ const ExperienceCard = ({title, date, subtitle, description}: CardInfo) => {
 
                 <p>{description}</p>
             </div>
-        </HoverCard>
+        </div>
     );
 }
 
 const Page = () => {
     return (
-        <>
-            <div className='flex flex-col gap-2'>
+        <div className='flex flex-col flex-1 gap-4 overflow-y-auto lg:flex-row'>
+            <div className='flex flex-col gap-2 lg:flex-1'>
                 <div className='flex-between items-center'>
                     <h3>Experience</h3>
                     <a className='flex flex-wrap text-lg' download href='/resume-files/TEST_RESUME.pdf'>
@@ -37,7 +36,7 @@ const Page = () => {
                 ))}
             </div>
 
-            <div className='flex flex-col gap-2'>
+            <div className='flex flex-col gap-2 lg:flex-1'>
                 <div className='flex-between items-center'>
                     <h3>Education</h3>
                     <a className='flex flex-wrap text-lg' download href='/resume-files/TEST_RESUME.pdf'>
@@ -50,7 +49,7 @@ const Page = () => {
                     <ExperienceCard title={item.title} date={item.date} subtitle={item.subtitle} description={item.description} key={index}/>
                 ))}
             </div>
-        </>
+        </div>
     );
 }
 
