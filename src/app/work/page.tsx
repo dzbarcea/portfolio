@@ -1,28 +1,37 @@
 'use client';
 import { Icon } from '@iconify/react';
-import { sections, projects  } from '@/data/work';
+import {sections, projects, SkillItem} from '@/data/work';
 import Link from 'next/link';
-import {useState} from 'react';
+import { useState } from 'react';
 
 const Page = () => {
     const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
-    const [hovering, setHovering] = useState<string | undefined>(undefined);
+    const [hoveringSkill, setHoveringSkill] = useState<string | undefined>(undefined);
+    const [hoveringProjectSkills, setHoveringProjectSkills] = useState<string[]>([]);
 
-    const handleMouseEnter = (itemName: string) => {
-        setHovering(itemName);
+    const handleMouseEnterSkill = (itemName: string) => {
+        setHoveringSkill(itemName);
     }
 
-    const handleMouseLeave = () => {
-        setHovering(undefined);
+    const handleMouseLeaveSkill = () => {
+        setHoveringSkill(undefined);
     }
 
-    const handleClick = (itemName: string) => {
+    const handleClickSkill = (itemName: string) => {
         const index = selectedSkills.indexOf(itemName);
         if (index > -1) {
             setSelectedSkills(selectedSkills => selectedSkills.toSpliced(index, 1));
         } else {
             setSelectedSkills(selectedSkills => [...selectedSkills, itemName]);
         }
+    }
+
+    const handleMouseEnterProject = (skillNames: string[]) => {
+        setHoveringProjectSkills(skillNames);
+    }
+
+    const handleMouseLeaveProject = () => {
+        setHoveringProjectSkills([]);
     }
 
     return (
@@ -35,16 +44,17 @@ const Page = () => {
                             <h4>{section.title}</h4>
                             <ul className='grid grid-cols-3 gap-2'>
                                 {section.items.map((item) => {
-                                    const isSelected = selectedSkills.includes(item.name);
-                                    const isFaded = (hovering || selectedSkills.length > 0) && !isSelected;
+                                    const isHighlighted = hoveringProjectSkills && hoveringProjectSkills.includes(item.name);
+                                    const isSelected = !isHighlighted && selectedSkills.includes(item.name);
+                                    const isFaded = !isSelected && !isHighlighted && (hoveringSkill || selectedSkills.length > 0 || hoveringProjectSkills.length > 0);
 
                                     return (
                                         <li
                                             key={item.name}
-                                            className={`container clickable p-2 rounded-lg ${isSelected && 'selected'} ${isFaded && 'faded'}`}
-                                            onMouseEnter={() => handleMouseEnter(item.name)}
-                                            onMouseLeave={handleMouseLeave}
-                                            onClick={() => handleClick(item.name)}
+                                            className={`container clickable p-2 rounded-lg ${isHighlighted && 'highlighted'} ${isSelected && 'selected'} ${isFaded && 'faded'}`}
+                                            onMouseEnter={() => handleMouseEnterSkill(item.name)}
+                                            onMouseLeave={handleMouseLeaveSkill}
+                                            onClick={() => handleClickSkill(item.name)}
                                         >
                                             <Icon icon={item.icon} className='text-2xl'/>
                                         </li>
@@ -58,16 +68,22 @@ const Page = () => {
             <div>
                 <div className='flex flex-col gap-2'>
                     <h3>Projects</h3>
-                    <ul>
+                    <ul className='flex flex-col gap-2'>
                         {Object.keys(projects).map((project, index) => {
-                            const isHighlighted = projects[project].relatedSkills.some(item => item.name === hovering);
+                            const skillNames = Object.values(projects[project].relatedSkills).map(skill => skill.name);
+
+                            const isHighlighted = projects[project].relatedSkills.some(item => item.name === hoveringSkill);
                             const isSelected = !isHighlighted && projects[project].relatedSkills.some(item => selectedSkills.includes(item.name));
+                            const isFaded = !isSelected && !isHighlighted && (hoveringSkill || selectedSkills.length > 0 || hoveringProjectSkills.length > 0);
 
                             return (
-                                <li key={index}>
+                                <li key={index}
+                                    onMouseEnter={() => handleMouseEnterProject(skillNames)}
+                                    onMouseLeave={handleMouseLeaveProject}
+                                >
                                     <Link
                                         href={`/work/projects/${project}`}
-                                        className={`flex flex-col gap-1 border-container clickable p-4 rounded-lg ${isSelected && 'selected'} ${isHighlighted && 'highlighted'}`}
+                                        className={`flex flex-col gap-1 border-container clickable p-4 rounded-lg ${isSelected && 'selected'} ${isHighlighted && 'highlighted'} ${isFaded && 'faded'}`}
                                     >
                                         <div className='flex justify-between'>
                                             <h4 className='font-bold'>{projects[project].title}</h4>
