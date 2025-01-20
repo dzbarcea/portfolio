@@ -1,19 +1,38 @@
 'use client';
 import { Icon } from '@iconify/react';
-import {sections, projects, SkillItem} from '@/data/work';
+import { sections, projects } from '@/data/work';
 import Link from 'next/link';
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 
 const Page = () => {
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
     const [hoveringSkill, setHoveringSkill] = useState<string | undefined>(undefined);
     const [hoveringProjectSkills, setHoveringProjectSkills] = useState<string[]>([]);
 
+    useEffect(() => {
+        const handleResize = () => setWindowWidth(window.innerWidth);
+
+        window.addEventListener('resize', handleResize);
+
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     const handleMouseEnterSkill = (itemName: string) => {
+        // Disable mouseEnter functionality on anything below a large device
+        // Prevents from interfering with onClick for selecting/deselecting
+        if (windowWidth < 992) {
+            return;
+        }
         setHoveringSkill(itemName);
     }
 
     const handleMouseLeaveSkill = () => {
+        // Disable mouseLeave functionality on anything below a large device
+        // Prevents from interfering with onClick for selecting/deselecting
+        if (windowWidth < 992) {
+            return;
+        }
         setHoveringSkill(undefined);
     }
 
