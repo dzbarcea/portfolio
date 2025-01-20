@@ -5,19 +5,19 @@
 
 :root {
   --background: #EFEFF3;
-  --accent: #d8d8e8;
-  --accent-darker: #c5c5dc;
-  --accent-saturated: #CECEEF;
+  --accent: #e3e3ef;
+  --accent-darker: #ced1e6;
+  --accent-saturated: #e2ddff;
   --dark: #0E0923;
-  --highlight: #9775F3;
+  --highlight: #e0d1ff;
 
   /* TEXT COLORS */
   --text: #696986;
   --text-faded: #69698680;
 
   /* BORDER COLORS */
+  --border-opacity-5: #0E09230D;
   --border-opacity-10: #0E09231A;
-  --border-opacity-20: #0E092333;
 
   /* GRADIENTS */
   --light-gradient: linear-gradient(174deg, var(--accent), var(--accent-saturated));
@@ -81,16 +81,13 @@
 
   /* CLICKABLE & HOVERABLE ELEMENTS */
 
-  .container {
+  .container, .border-container {
     border: 1px solid transparent;
     transition: 50ms ease-in-out;
-
   }
 
   .border-container {
     background: var(--accent);
-    border: 1px solid var(--border-opacity-10);
-    transition: 50ms ease-in-out;
   }
 
   .faded:not(.selected,:hover) {
@@ -101,13 +98,11 @@
     cursor: pointer;
   }
 
-  .border-container:hover,
   .border-container.clickable.selected,
-  .container:hover,
   .container.clickable.selected
   {
     background: var(--accent-darker);
-    border: 1px solid var(--border-opacity-20);
+    border: 1px solid var(--border-opacity-5);
   }
 
   .border-container.clickable:hover,
@@ -116,6 +111,6 @@
   {
     background: var(--accent-saturated);
     border: 1px solid var(--highlight);
-    transform: perspective(100px) translateZ(2px);
+    /*transform: perspective(100px) translateZ(2px);*/
   }
 }

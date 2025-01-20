@@ -13,7 +13,7 @@ const NavLink = ({ children, to }: NavLinkProps) => {
     const pathname = usePathname();
 
     return (
-        <Link href={to} className={`border-container clickable px-3 py-1.5 text-xs font-semibold rounded-full ${pathname.includes(to) && 'selected'}`}>
+        <Link href={to} className={`border-container clickable px-3 py-1.5 text-xs font-semibold rounded-full hover:selected ${pathname.includes(to) && 'selected'}`}>
             {children}
         </Link>
     );
