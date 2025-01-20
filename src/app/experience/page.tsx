@@ -3,7 +3,7 @@ import { CardInfo, educationItems, experienceItems } from '@/data/experience';
 
 const ExperienceCard = ({title, date, subtitle, description}: CardInfo) => {
     return (
-        <div className='border-container rounded-lg hover:highlighted'>
+        <div className='border-container rounded-lg hover:highlighted cursor-default'>
             <div className='flex flex-col gap-2 p-2'>
                 <div>
                     <div className='flex-between'>

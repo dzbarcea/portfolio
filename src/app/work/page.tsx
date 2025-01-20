@@ -61,7 +61,7 @@ const Page = () => {
                     {sections.map(section => (
                         <div key={section.title} className='flex flex-col gap-1'>
                             <h4>{section.title}</h4>
-                            <ul className='grid grid-cols-3 gap-2 xl:grid-cols-4'>
+                            <ul className='grid grid-cols-3 gap-2 2xl:grid-cols-4'>
                                 {section.items.map((item) => {
                                     const isHighlighted = hoveringProjectSkills && hoveringProjectSkills.includes(item.name);
                                     const isSelected = !isHighlighted && selectedSkills.includes(item.name);

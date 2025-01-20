@@ -156,7 +156,7 @@ export const projects: Record<string, Project> = {
         description: 'A self-hosted music bot for playing audio from Youtube and Spotify, coded using Discord.js',
         imgSrc: '/discord-music-bot',
         imgAlt: `Discord Music Bot`,
-        date: '2025',
+        date: '2024',
         relatedSkills: [
             Skills.JAVASCRIPT,
             Skills.NODE,
