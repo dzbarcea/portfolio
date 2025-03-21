@@ -15,6 +15,7 @@ export interface Project {
     imgAlt: string;
     date: string;
     relatedSkills: SkillItem[];
+    url?: string;
 }
 
 export const Skills: Record<string, SkillItem> = {
@@ -86,7 +87,7 @@ export const projects: Record<string, Project> = {
         description: 'Compete against others in predicting the outcome of tournament stats',
         imgSrc: '/images/idolsgg.png',
         imgAlt: `Idols.gg Pick'ems page`,
-        date: '2023',
+        date: '2022/23',
         relatedSkills: [
             Skills.JAVASCRIPT,
             Skills.REACT,
@@ -98,6 +99,7 @@ export const projects: Record<string, Project> = {
             Skills.FIGMA,
             Skills.GIT,
         ],
+        url: 'https://idols.gg'
     },
     'poetry-flow': {
         title: 'Poetry Flow',
@@ -118,10 +120,10 @@ export const projects: Record<string, Project> = {
         ],
     },
     'actify': {
-        title: 'Actify',
+        title: 'HabitBind',
         description: 'Improve motivation & get things done using the principle of Intentional Binding',
-        imgSrc: '/actify',
-        imgAlt: `Actify action selection page`,
+        imgSrc: '/habit-bind',
+        imgAlt: `HabitBind action selection page`,
         date: '2025',
         relatedSkills: [
             Skills.TYPESCRIPT,

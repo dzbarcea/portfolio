@@ -26,7 +26,7 @@ const Page = () => {
                 <div className='flex-between items-center'>
                     <h3>Experience</h3>
                     <a className='flex flex-wrap text-lg' download href='/resume-files/TEST_RESUME.pdf'>
-                        <h5>Resume</h5>
+                        <h5 className='hover:underline hover:-translate-y-0.5 duration-100'>Resume</h5>
                         <Icon icon='material-symbols:download-rounded'/>
                     </a>
                 </div>
@@ -40,7 +40,7 @@ const Page = () => {
                 <div className='flex-between items-center'>
                     <h3>Education</h3>
                     <a className='flex flex-wrap text-lg' download href='/resume-files/TEST_RESUME.pdf'>
-                        <h5>Resume</h5>
+                        <h5 className='hover:underline hover:-translate-y-0.5 duration-100'>Resume</h5>
                         <Icon icon='material-symbols:download-rounded'/>
                     </a>
                 </div>

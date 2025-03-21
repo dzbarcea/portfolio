@@ -1,6 +1,7 @@
 'use client';
 import { usePathname } from 'next/navigation';
 import { projects } from '@/data/work';
+import {Icon} from '@iconify/react';
 
 const Page = () => {
     const pathname = usePathname();
@@ -8,17 +9,32 @@ const Page = () => {
     const projectData = projects[slug];
 
     return (
-        <>
+        <div className='flex flex-col items-start gap-4'>
+            <a className='flex text-xl items-center hover:underline hover:-translate-y-0.5 duration-100' href='/work'>
+                <Icon icon='material-symbols:arrow-back-rounded'/>
+                Back to Projects
+            </a>
             {
                 projectData ?
-                    <div>
-                        <img src={projectData.imgSrc} alt={projectData.imgAlt}/>
-                        <div className='flex gap-4 items-baseline'>
-                            <h3>{projectData.title}</h3>
-                            <h4>{projectData.date}</h4>
+                    <div className='flex flex-col gap-8 lg:flex-row'>
+                        <div className='flex-1'>
+                            <img src={projectData.imgSrc} alt={projectData.imgAlt}
+                                 className='object-cover rounded-xl aspect-[2/1] lg:aspect-[3/2]'/>
+                        </div>
+                        <div className='flex flex-col flex-1 gap-4'>
+                            <div className='flex items-baseline gap-4'>
+                                {projectData.url ?
+                                    <a href={projectData.url} target='_blank' className='hover:underline hover:-translate-y-1 duration-100'>
+                                        <h1>{projectData.title}</h1>
+                                    </a> :
+                                    <h1>{projectData.title}</h1>
+                                }
+                                <h2>{projectData.date}</h2>
+                            </div>
+                            <p>{projectData.description}</p>
                         </div>
 
-                        <p>{projectData.description}</p>
+
                     </div>
                     :
                     <>
@@ -26,7 +42,7 @@ const Page = () => {
                         <a href='/work'>View projects</a>
                     </>
             }
-        </>
+        </div>
     );
 }
 
