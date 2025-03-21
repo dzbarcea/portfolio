@@ -7,8 +7,8 @@ const Page = () => {
                 <h3>Email</h3>
 
                 <div className='border-container rounded-lg hover:highlighted cursor-default'>
-                    <a className='flex items-center gap-1 p-2' href='mailto:david.e.zbarcea@gmail.com'>
-                        david.e.zbarcea@gmail.com
+                    <a className='flex items-center gap-1 p-2' href='mailto:david.edward.zbarcea@gmail.com'>
+                        david.edward.zbarcea@gmail.com
                         <Icon icon='ci:external-link'/>
                     </a>
                 </div>

@@ -31,7 +31,7 @@ const Page = () => {
                                 }
                                 <h2>{projectData.date}</h2>
                             </div>
-                            <p>{projectData.description}</p>
+                            <p>{projectData.shortDescription}</p>
                         </div>
 
 

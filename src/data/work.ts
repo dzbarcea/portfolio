@@ -10,7 +10,7 @@ export interface Section {
 
 export interface Project {
     title: string;
-    description: string;
+    shortDescription: string;
     imgSrc: string;
     imgAlt: string;
     date: string;
@@ -84,7 +84,7 @@ export const sections: Section[] = [
 export const projects: Record<string, Project> = {
     'idols': {
         title: 'Idols.gg',
-        description: 'Compete against others in predicting the outcome of tournament stats',
+        shortDescription: 'Compete against others in predicting the outcome of e-sports tournament stats',
         imgSrc: '/images/idolsgg.png',
         imgAlt: `Idols.gg Pick'ems page`,
         date: '2022/23',
@@ -103,8 +103,8 @@ export const projects: Record<string, Project> = {
     },
     'poetry-flow': {
         title: 'Poetry Flow',
-        description: 'Explore poetry in a new and fun way',
-        imgSrc: '/poetry-flow',
+        shortDescription: 'Explore poetry in a new and fun way',
+        imgSrc: '/images/poetry-flow.png',
         imgAlt: `Poetry Flow explore function`,
         date: '2025',
         relatedSkills: [
@@ -118,11 +118,12 @@ export const projects: Record<string, Project> = {
             Skills.FIGMA,
             Skills.GIT,
         ],
+        url: 'https://poetry-flow.com'
     },
-    'actify': {
+    'habit-bind': {
         title: 'HabitBind',
-        description: 'Improve motivation & get things done using the principle of Intentional Binding',
-        imgSrc: '/habit-bind',
+        shortDescription: 'Improve motivation & get things done using the principle of Intentional Binding',
+        imgSrc: '/images/habit-bind.png',
         imgAlt: `HabitBind action selection page`,
         date: '2025',
         relatedSkills: [
@@ -134,10 +135,11 @@ export const projects: Record<string, Project> = {
             Skills.FIGMA,
             Skills.GIT,
         ],
+        url: 'https://habitbind.com'
     },
     'portfolio': {
         title: 'Portfolio Website',
-        description: 'The site you are viewing right now!',
+        shortDescription: 'The site you are viewing right now!',
         imgSrc: '/portfolio',
         imgAlt: `Portfolio website about page`,
         date: '2025',
@@ -155,8 +157,8 @@ export const projects: Record<string, Project> = {
     },
     'discord-music-bot': {
         title: 'Discord Music Bot',
-        description: 'A self-hosted music bot for playing audio from Youtube and Spotify, coded using Discord.js',
-        imgSrc: '/discord-music-bot',
+        shortDescription: 'A self-hosted music bot for playing audio from Youtube and Spotify, coded using Discord.js',
+        imgSrc: '/images/discord-bot.svg',
         imgAlt: `Discord Music Bot`,
         date: '2024',
         relatedSkills: [

@@ -101,7 +101,7 @@ const Page = () => {
                             >
                                 <Link
                                     href={`/work/projects/${project}`}
-                                    className={`flex flex-col md:items-end md:flex-row lg:items-start lg:flex-col gap-2 border-container clickable p-4 rounded-lg ${isSelected && 'selected'} ${isHighlighted && 'highlighted'} ${isFaded && 'faded'}`}
+                                    className={`flex h-full flex-col md:items-end md:flex-row lg:items-start lg:flex-col gap-2 border-container clickable p-4 rounded-lg ${isSelected && 'selected'} ${isHighlighted && 'highlighted'} ${isFaded && 'faded'}`}
                                 >
                                     <img src={projects[project].imgSrc} alt={projects[project].imgAlt} className='rounded-lg aspect-[2/1] object-cover md:w-1/2 lg:w-full'/>
                                     <div className='flex flex-col gap-1'>
@@ -109,7 +109,7 @@ const Page = () => {
                                             <h4 className='font-bold'>{projects[project].title}</h4>
                                             <h4>{projects[project].date}</h4>
                                         </div>
-                                        <p>{projects[project].description}</p>
+                                        <p>{projects[project].shortDescription}</p>
                                     </div>
                                 </Link>
                             </li>
