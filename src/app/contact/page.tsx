@@ -26,8 +26,8 @@ const Page = () => {
                         </a>
                     </div>
                     <div className='border-container rounded-lg hover:highlighted cursor-default'>
-                        <a className='flex items-center gap-1 p-2' href='https://github.com/dzbarcea' target='_blank'>
-                            GitHub
+                        <a className='flex items-center gap-1 p-2' href='https://gitlab.com/dzbarcea' target='_blank'>
+                            GitLab
                             <Icon icon='ci:external-link'/>
                         </a>
                     </div>
