@@ -9,20 +9,20 @@ const Page = () => {
     const projectData = projects[slug];
 
     return (
-        <div className='flex flex-col items-start gap-4'>
+        <div className='flex flex-col items-start gap-4 overflow-hidden'>
             <a className='flex text-xl items-center hover:underline hover:-translate-y-0.5 duration-100' href='/work'>
                 <Icon icon='material-symbols:arrow-back-rounded'/>
                 Back to Projects
             </a>
             {
                 projectData ?
-                    <div className='flex flex-col gap-8 lg:flex-row'>
+                    <div className='flex flex-col gap-8 lg:flex-row overflow-y-auto'>
                         <div className='flex-1'>
                             <img src={projectData.imgSrc} alt={projectData.imgAlt}
                                  className='object-cover rounded-xl aspect-[2/1] lg:aspect-[3/2]'/>
                         </div>
-                        <div className='flex flex-col flex-1 gap-4'>
-                            <div className='flex items-baseline gap-4'>
+                        <div className='flex flex-col flex-1 gap-2'>
+                            <div className='flex items-baseline gap-4 pb-4'>
                                 {projectData.url ?
                                     <a href={projectData.url} target='_blank' className='hover:underline hover:-translate-y-1 duration-100'>
                                         <h1>{projectData.title}</h1>
@@ -31,7 +31,7 @@ const Page = () => {
                                 }
                                 <h2>{projectData.date}</h2>
                             </div>
-                            <p>{projectData.shortDescription}</p>
+                            {projectData.longDescription.map((line, index) => <p key={index}>{line}</p>)}
                         </div>
 
 
