@@ -114,3 +114,9 @@
     /*transform: perspective(100px) translateZ(2px);*/
   }
 }
+
+@layer utilities {
+  .hover-image {
+    @apply transition-all group-hover:scale-105 duration-100 ease-in-out cursor-pointer group-hover:opacity-75;
+  }
+}

@@ -16,16 +16,35 @@ const Page = () => {
             </a>
             {
                 projectData ?
-                    <div className='flex flex-col gap-8 lg:flex-row overflow-y-auto'>
-                        <div className='flex-1'>
-                            <img src={projectData.imgSrc} alt={projectData.imgAlt}
-                                 className='object-cover rounded-xl aspect-[2/1] lg:aspect-[3/2]'/>
-                        </div>
+                    <div className='flex items-start flex-col gap-8 lg:flex-row overflow-y-auto'>
+                        {projectData.url ?
+                            <a href={projectData.url} target='_blank'
+                               className='flex-1 overflow-hidden rounded-xl relative group'>
+                                <img
+                                    src={projectData.imgSrc}
+                                    alt={projectData.imgAlt}
+                                    className='object-cover aspect-[2/1] lg:aspect-[3/2] hover-image'
+                                />
+                                <div
+                                    className='opacity-0 bg-background cursor-pointer hover:opacity-80 duration-100 absolute z-99 top-0 flex justify-center items-center h-full w-full text-6xl'>
+                                    <Icon icon='ci:external-link'/>
+                                </div>
+                            </a>
+                            :
+                            <div className='flex-1'>
+                                <img
+                                    src={projectData.imgSrc}
+                                    alt={projectData.imgAlt}
+                                    className='object-cover aspect-[2/1] lg:aspect-[3/2]'
+                                />
+                            </div>
+                        }
                         <div className='flex flex-col flex-1 gap-2'>
                             <div className='flex items-baseline gap-4 pb-4'>
                                 {projectData.url ?
-                                    <a href={projectData.url} target='_blank' className='hover:underline hover:-translate-y-1 duration-100'>
-                                        <h1>{projectData.title}</h1>
+                                    <a href={projectData.url} target='_blank'
+                                       className='hover:underline hover:-translate-y-1 duration-100'>
+                                        <h1 className='text-4xl md:text-6xl'>{projectData.title}</h1>
                                     </a> :
                                     <h1>{projectData.title}</h1>
                                 }
