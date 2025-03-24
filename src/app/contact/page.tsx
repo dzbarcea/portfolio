@@ -32,13 +32,6 @@ const Page = () => {
                             <Icon icon='ci:external-link'/>
                         </Link>
                     </div>
-                    <div className='border-container rounded-lg hover:highlighted cursor-default'>
-                        <Link className='flex items-center gap-1 p-2' href='https://www.instagram.com/dzbarcea/'
-                           target='_blank'>
-                            Instagram
-                            <Icon icon='ci:external-link'/>
-                        </Link>
-                    </div>
                 </div>
             </div>
         </div>
