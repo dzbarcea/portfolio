@@ -1,21 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #EFEFF3; /* #EFEFF3 */
+  --accent: #e3e3ef;
+  --accent-darker: #dddaef;
+  --accent-saturated: #d3ceff;
+  --dark: #0E0923;
+  --highlight: #cac4ff;
+
+  /* TEXT COLORS */
+  --text: #696986;
+  --text-faded: #69698680;
+
+  /* BORDER COLORS */
+  --border-opacity-5: #0E09230D;
+  --border-opacity-10: #0E09231A;
+
+  /* GRADIENTS */
+  --light-gradient: linear-gradient(174deg, var(--accent), var(--accent-saturated));
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #EFEFF3;
+    --text: #696986;
+    --accent: #d8d8e8;
+    --accent-darker: #c5c5dc;
+    --accent-saturated: #d3ceff;
+    --dark: #0E0923;
+    --border-opacity-10: #0E09231A;
+    --border-opacity-20: #0E092333;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+@layer base {
+  body {
+    color: var(--text);
+    background: var(--background);
+    font-family: 'Hanken Grotesk', sans-serif;
+    height: 100vh;
+  }
+
+  h1 {
+    @apply text-6xl font-black lg:text-7xl;
+  }
+
+  h2 {
+    @apply text-2xl font-extralight text-dark lg:text-3xl;
+  }
+
+  h3 {
+    @apply text-2xl font-bold;
+  }
+
+  h4 {
+    @apply text-2xl font-light;
+  }
+
+  h5 {
+    @apply text-sm font-light;
+  }
+
+  .flex-between {
+    @apply flex justify-between;
+  }
+
+
+  /* CLICKABLE & HOVERABLE ELEMENTS */
+
+  .container, .border-container {
+    border: 1px solid transparent;
+    transition: 50ms ease-in-out;
+  }
+
+  .border-container {
+    background: var(--accent);
+  }
+
+  .faded:not(.selected,:hover) {
+    opacity: 0.5;
+  }
+
+  .clickable {
+    cursor: pointer;
+  }
+
+  .border-container.clickable.selected,
+  .container.clickable.selected
+  {
+    background: var(--accent-darker);
+    border: 1px solid var(--border-opacity-5);
+  }
+
+  .border-container.clickable:hover,
+  .container.clickable:hover,
+  .highlighted
+  {
+    background: var(--accent-saturated);
+    border: 1px solid var(--highlight);
+    /*transform: perspective(100px) translateZ(2px);*/
+  }
+}
+
+@layer utilities {
+  .hover-image {
+    @apply transition-all group-hover:scale-105 duration-100 ease-in-out cursor-pointer group-hover:opacity-75;
+  }
 }
