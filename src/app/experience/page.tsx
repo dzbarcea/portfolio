@@ -26,7 +26,7 @@ const Page = () => {
             <div className='flex flex-col gap-2 lg:flex-1'>
                 <div className='flex-between items-center'>
                     <h3>Experience</h3>
-                    <Link className='flex flex-wrap text-lg' download href='/resume-files/DavidZbarcea_Resume.pdf'>
+                    <Link className='flex flex-wrap text-lg' download href='/resume-files/DavidZbarcea_Resume.pdf' target='_blank'>
                         <h5 className='hover:underline hover:-translate-y-0.5 duration-100'>Resume</h5>
                         <Icon icon='material-symbols:download-rounded'/>
                     </Link>
@@ -40,7 +40,7 @@ const Page = () => {
             <div className='flex flex-col gap-2 lg:flex-1'>
                 <div className='flex-between items-center'>
                     <h3>Education</h3>
-                    <Link className='flex flex-wrap text-lg' download href='/resume-files/DavidZbarcea_Resume.pdf'>
+                    <Link className='flex flex-wrap text-lg' download href='/resume-files/DavidZbarcea_Resume.pdf' target='_blank'>
                         <h5 className='hover:underline hover:-translate-y-0.5 duration-100'>Resume</h5>
                         <Icon icon='material-symbols:download-rounded'/>
                     </Link>
