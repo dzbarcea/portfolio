@@ -15,10 +15,6 @@ const Page = () => {
     const [hoveringProjectSkills, setHoveringProjectSkills] = useState<string[]>([]);
 
     useEffect(() => {
-        if (typeof window == 'undefined') {
-            return;
-        }
-
         const handleResize = () => setWindowWidth(window.innerWidth);
 
         window.addEventListener('resize', handleResize);
