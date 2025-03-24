@@ -1,5 +1,6 @@
 import { Icon } from '@iconify/react';
 import { CardInfo, educationItems, experienceItems } from '@/data/experience';
+import Link from 'next/link';
 
 const ExperienceCard = ({title, date, subtitle, description}: CardInfo) => {
     return (
@@ -25,10 +26,10 @@ const Page = () => {
             <div className='flex flex-col gap-2 lg:flex-1'>
                 <div className='flex-between items-center'>
                     <h3>Experience</h3>
-                    <a className='flex flex-wrap text-lg' download href='/resume-files/DavidZbarcea_Resume.pdf'>
+                    <Link className='flex flex-wrap text-lg' download href='/resume-files/DavidZbarcea_Resume.pdf'>
                         <h5 className='hover:underline hover:-translate-y-0.5 duration-100'>Resume</h5>
                         <Icon icon='material-symbols:download-rounded'/>
-                    </a>
+                    </Link>
                 </div>
 
                 {experienceItems.map((item, index) => (
@@ -39,10 +40,10 @@ const Page = () => {
             <div className='flex flex-col gap-2 lg:flex-1'>
                 <div className='flex-between items-center'>
                     <h3>Education</h3>
-                    <a className='flex flex-wrap text-lg' download href='/resume-files/DavidZbarcea_Resume.pdf'>
+                    <Link className='flex flex-wrap text-lg' download href='/resume-files/DavidZbarcea_Resume.pdf'>
                         <h5 className='hover:underline hover:-translate-y-0.5 duration-100'>Resume</h5>
                         <Icon icon='material-symbols:download-rounded'/>
-                    </a>
+                    </Link>
                 </div>
 
                 {educationItems.map((item, index) => (
