@@ -7,15 +7,13 @@ import TooltipContainer from '@/components/TooltipContainer/TooltipContainer';
 
 const Page = () => {
     const [windowWidth, setWindowWidth] = useState(0);
-    if (typeof window !== 'undefined') {
-        setWindowWidth(window.innerWidth);
-    }
     const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
     const [hoveringSkill, setHoveringSkill] = useState<string | undefined>(undefined);
     const [hoveringProjectSkills, setHoveringProjectSkills] = useState<string[]>([]);
 
     useEffect(() => {
         const handleResize = () => setWindowWidth(window.innerWidth);
+        handleResize();
 
         window.addEventListener('resize', handleResize);
 
