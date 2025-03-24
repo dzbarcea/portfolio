@@ -18,17 +18,17 @@ const Page = () => {
             </Link>
             {
                 projectData ?
-                    <div className='flex items-start flex-col gap-8 lg:flex-row overflow-y-auto'>
+                    <div className='flex items-start flex-col pr-2 gap-8 lg:flex-row overflow-y-auto'>
                         {projectData.url ?
                             <Link href={projectData.url} target='_blank'
-                               className='flex-1 overflow-hidden rounded-xl relative group border border-accent-darker'>
+                               className='flex-1 md:overflow-hidden rounded-xl relative group border border-accent-darker w-full aspect-[2/1] lg:aspect-[3/2]'>
                                 <img
                                     src={projectData.imgSrc}
                                     alt={projectData.imgAlt}
-                                    className='object-cover aspect-[2/1] lg:aspect-[3/2] hover-image'
+                                    className='object-cover overflow-hidden rounded-xl aspect-[2/1] lg:aspect-[3/2] md:hover-image'
                                 />
                                 <div
-                                    className='opacity-0 bg-background cursor-pointer hover:opacity-80 duration-100 absolute z-99 top-0 flex justify-center items-center h-full w-full text-6xl'>
+                                    className='opacity-0 bg-background cursor-pointer md:hover:opacity-80 duration-100 absolute z-99 top-0 flex justify-center items-center h-full w-full text-6xl'>
                                     <Icon icon='ci:external-link'/>
                                 </div>
                             </Link>
@@ -41,7 +41,7 @@ const Page = () => {
                                 />
                             </div>
                         }
-                        <div className='flex flex-col flex-1 gap-2'>
+                        <div className='flex flex-col flex-1 gap-2 pb-6'>
                             <div className='flex items-baseline gap-4 pb-2'>
                                 {projectData.url ?
                                     <Link href={projectData.url} target='_blank'
@@ -61,8 +61,6 @@ const Page = () => {
                             </div>
                             {projectData.longDescription.map((line, index) => <p key={index}>{line}</p>)}
                         </div>
-
-
                     </div>
                     :
                     <>
