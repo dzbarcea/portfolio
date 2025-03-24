@@ -96,8 +96,8 @@ export const projects: Record<string, Project> = {
         imgAlt: `Idols.gg Pick'ems page`,
         date: '2022/23',
         relatedSkills: [
-            Skills.JAVASCRIPT,
             Skills.REACT,
+            Skills.JAVASCRIPT,
             Skills.NODE,
             Skills.HTML,
             Skills.CSS,
@@ -122,8 +122,8 @@ export const projects: Record<string, Project> = {
         imgAlt: `Poetry Flow explore function`,
         date: '2025',
         relatedSkills: [
-            Skills.TYPESCRIPT,
             Skills.SVELTE,
+            Skills.TYPESCRIPT,
             Skills.NODE,
             Skills.HTML,
             Skills.CSS,
@@ -156,8 +156,8 @@ export const projects: Record<string, Project> = {
         imgAlt: `HabitBind action selection page`,
         date: '2025',
         relatedSkills: [
-            Skills.TYPESCRIPT,
             Skills.REACT,
+            Skills.TYPESCRIPT,
             Skills.NODE,
             Skills.HTML,
             Skills.CSS,
@@ -178,9 +178,9 @@ export const projects: Record<string, Project> = {
         imgAlt: `Portfolio website about page`,
         date: '2025',
         relatedSkills: [
-            Skills.TYPESCRIPT,
             Skills.REACT,
             Skills.NEXTJS,
+            Skills.TYPESCRIPT,
             Skills.NODE,
             Skills.HTML,
             Skills.CSS,
@@ -205,8 +205,8 @@ export const projects: Record<string, Project> = {
         imgAlt: `Discord Music Bot`,
         date: '2024',
         relatedSkills: [
-            Skills.JAVASCRIPT,
             Skills.NODE,
+            Skills.JAVASCRIPT,
             Skills.EXPRESS,
             Skills.MONGODB,
             Skills.GIT,

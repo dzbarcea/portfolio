@@ -11,14 +11,14 @@ const Page = () => {
     const projectData = projects[slug];
 
     return (
-        <div className='flex flex-col items-start gap-4 overflow-hidden'>
+        <div className='flex flex-col items-start gap-4 overflow-y-hidden'>
             <Link className='flex text-xl items-center hover:underline hover:-translate-y-0.5 duration-100' href='/work'>
                 <Icon icon='material-symbols:arrow-back-rounded'/>
                 Back to Projects
             </Link>
             {
                 projectData ?
-                    <div className='flex items-start flex-col pr-2 gap-8 lg:flex-row overflow-y-auto'>
+                    <div className='flex items-start flex-col pr-2 gap-8 lg:flex-row overflow-y-auto max-w-full'>
                         {projectData.url ?
                             <Link href={projectData.url} target='_blank'
                                className='flex-1 md:overflow-hidden rounded-xl relative group border border-accent-darker w-full aspect-[2/1] lg:aspect-[3/2]'>
@@ -52,7 +52,7 @@ const Page = () => {
                                 }
                                 <h2>{projectData.date}</h2>
                             </div>
-                            <div className='flex gap-4 text-2xl pb-6'>
+                            <div className='flex gap-4 text-2xl pb-6 px-4 flex-wrap'>
                                 {projectData.relatedSkills.map((skill, index) => (
                                     <TooltipContainer key={index} text={skill.name}>
                                         <Icon icon={skill.icon}/>
