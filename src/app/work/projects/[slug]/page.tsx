@@ -2,6 +2,7 @@
 import { usePathname } from 'next/navigation';
 import { projects } from '@/data/work';
 import {Icon} from '@iconify/react';
+import TooltipContainer from '@/components/TooltipContainer/TooltipContainer';
 
 const Page = () => {
     const pathname = usePathname();
@@ -40,7 +41,7 @@ const Page = () => {
                             </div>
                         }
                         <div className='flex flex-col flex-1 gap-2'>
-                            <div className='flex items-baseline gap-4 pb-4'>
+                            <div className='flex items-baseline gap-4 pb-2'>
                                 {projectData.url ?
                                     <a href={projectData.url} target='_blank'
                                        className='hover:underline hover:-translate-y-1 duration-100'>
@@ -49,6 +50,13 @@ const Page = () => {
                                     <h1>{projectData.title}</h1>
                                 }
                                 <h2>{projectData.date}</h2>
+                            </div>
+                            <div className='flex gap-4 text-2xl pb-6'>
+                                {projectData.relatedSkills.map((skill, index) => (
+                                    <TooltipContainer key={index} text={skill.name}>
+                                        <Icon icon={skill.icon}/>
+                                    </TooltipContainer>
+                                ))}
                             </div>
                             {projectData.longDescription.map((line, index) => <p key={index}>{line}</p>)}
                         </div>

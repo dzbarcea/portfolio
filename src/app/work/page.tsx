@@ -3,6 +3,7 @@ import { Icon } from '@iconify/react';
 import { sections, projects } from '@/data/work';
 import Link from 'next/link';
 import {useEffect, useState} from 'react';
+import TooltipContainer from '@/components/TooltipContainer/TooltipContainer';
 
 const Page = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -68,15 +69,16 @@ const Page = () => {
                                     const isFaded = !isSelected && !isHighlighted && (hoveringSkill || selectedSkills.length > 0 || hoveringProjectSkills.length > 0);
 
                                     return (
-                                        <li
-                                            key={item.name}
-                                            className={`container clickable p-2 rounded-lg ${isHighlighted && 'highlighted'} ${isSelected && 'selected'} ${isFaded && 'faded'}`}
-                                            onMouseEnter={() => handleMouseEnterSkill(item.name)}
-                                            onMouseLeave={handleMouseLeaveSkill}
-                                            onClick={() => handleClickSkill(item.name)}
-                                        >
-                                            <Icon icon={item.icon} className='text-2xl'/>
-                                        </li>
+                                        <TooltipContainer key={item.name} text={item.name}>
+                                            <li
+                                                className={`container clickable p-2 rounded-lg ${isHighlighted && 'highlighted'} ${isSelected && 'selected'} ${isFaded && 'faded'}`}
+                                                onMouseEnter={() => handleMouseEnterSkill(item.name)}
+                                                onMouseLeave={handleMouseLeaveSkill}
+                                                onClick={() => handleClickSkill(item.name)}
+                                            >
+                                                <Icon icon={item.icon} className='text-2xl'/>
+                                            </li>
+                                        </TooltipContainer>
                                     );
                                 })}
                             </ul>
