@@ -22,7 +22,7 @@ const ExperienceCard = ({title, date, subtitle, description}: CardInfo) => {
 
 const Page = () => {
     return (
-        <div className='flex flex-col flex-1 gap-4 overflow-y-auto lg:flex-row'>
+        <div className='flex flex-col flex-1 gap-4 overflow-y-auto lg:flex-row pb-6'>
             <div className='flex flex-col gap-2 lg:flex-1'>
                 <div className='flex-between items-center'>
                     <h3>Experience</h3>

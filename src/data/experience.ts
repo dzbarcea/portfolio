@@ -38,6 +38,6 @@ export const educationItems: CardInfo[] = [
         title: 'University of Edinburgh',
         subtitle: 'B.A. International Business & Chinese (Partial)',
         date: 'Sep 2019 - Nov 2022',
-        description: 'Awarded Best Presenter in 2020 by Dean of Business School for excellent communication. Top of class in Chinese.'
+        description: 'Awarded Best Presenter in 2020 by Dean of Business School for excellent communication.'
     }
 ];
