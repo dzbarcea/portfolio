@@ -11,6 +11,7 @@ export default {
         text: "var(--text)",
         accent: "var(--accent)",
         dark: "var(--dark)",
+        'accent-darker': "var(--accent-darker)",
       },
       fontFamily: {
         'hanken': ['Hanken Grotesk', 'sans-serif'],

@@ -1,4 +1,5 @@
 import {Icon} from '@iconify/react';
+import Link from 'next/link';
 
 const Page = () => {
     return (
@@ -7,10 +8,10 @@ const Page = () => {
                 <h3>Email</h3>
 
                 <div className='border-container rounded-lg hover:highlighted cursor-default'>
-                    <a className='flex items-center gap-1 p-2' href='mailto:david.edward.zbarcea@gmail.com'>
+                    <Link className='flex items-center gap-1 p-2' href='mailto:david.edward.zbarcea@gmail.com'>
                         david.edward.zbarcea@gmail.com
                         <Icon icon='ci:external-link'/>
-                    </a>
+                    </Link>
                 </div>
             </div>
 
@@ -19,24 +20,24 @@ const Page = () => {
 
                 <div className='flex flex-wrap gap-2 items-start'>
                     <div className='border-container rounded-lg hover:highlighted cursor-default'>
-                        <a className='flex items-center gap-1 p-2' href='https://www.linkedin.com/in/david-z-b495b9140/'
+                        <Link className='flex items-center gap-1 p-2' href='https://www.linkedin.com/in/david-z-b495b9140/'
                            target='_blank'>
                             LinkedIn
                             <Icon icon='ci:external-link'/>
-                        </a>
+                        </Link>
                     </div>
                     <div className='border-container rounded-lg hover:highlighted cursor-default'>
-                        <a className='flex items-center gap-1 p-2' href='https://gitlab.com/dzbarcea' target='_blank'>
+                        <Link className='flex items-center gap-1 p-2' href='https://gitlab.com/dzbarcea' target='_blank'>
                             GitLab
                             <Icon icon='ci:external-link'/>
-                        </a>
+                        </Link>
                     </div>
                     <div className='border-container rounded-lg hover:highlighted cursor-default'>
-                        <a className='flex items-center gap-1 p-2' href='https://www.instagram.com/dzbarcea/'
+                        <Link className='flex items-center gap-1 p-2' href='https://www.instagram.com/dzbarcea/'
                            target='_blank'>
                             Instagram
                             <Icon icon='ci:external-link'/>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

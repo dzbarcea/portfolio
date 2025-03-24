@@ -30,10 +30,10 @@ export const Skills: Record<string, SkillItem> = {
 
     // Frontend
     REACT: {name: 'React', icon: 'skill-icons:react-dark'},
-    NODE: {name: 'Node', icon: 'skill-icons:nodejs-dark'},
+    NODE: {name: 'Node.js', icon: 'skill-icons:nodejs-dark'},
     NEXTJS: {name: 'Next.js', icon: 'skill-icons:nextjs-dark'},
     SVELTE: {name: 'Svelte', icon: 'skill-icons:svelte'},
-    TAILWIND: {name: 'Tailwind', icon: 'skill-icons:tailwindcss-dark'},
+    TAILWIND: {name: 'TailwindCSS', icon: 'skill-icons:tailwindcss-dark'},
 
     // Backend
     EXPRESS: {name: 'Express', icon: 'skill-icons:expressjs-dark'},
@@ -139,14 +139,18 @@ export const projects: Record<string, Project> = {
         shortDescription: 'Improve motivation & get things done using the principle of Intentional Binding',
         longDescription: [
             'HabitBind is an application I built to help people like myself reinforce good habits, improve follow-through, and' +
-            ' promote intentionality, through the psychological principle of Intentional Binding. IB posits that through a process of' +
+            ' promote intentionality, through the psychological principle of Intentional Binding.',
+
+            'This project was an exercise in designing and developing a user experience which was satisfying and easy to use.' +
+            ' The most challenging aspect was educating users on the principle behind the application; making the information' +
+            ' available but not intrusive was difficult, but I achieved this through informative tooltips that link to a "learn" page.',
+
+            'IB posits that through a process of' +
             ' intentionally selecting an action, predicting an outcome, and reflecting afterwards, the brain perceives the' +
             ' action and result as occurring closer to one another. In other words, it reinforces that your actions directly lead to outcomes,' +
             ' increasing your sense of agency.',
 
-            'This project was an exercise in designing and developing a user experience which was satisfying and easy to use.' +
-            ' The most challenging aspect was educating users on the principle behind the application; making the information' +
-            ' available but not intrusive was difficult, but I achieved this through informative tooltips that link to a "learn" page.'
+
         ],
         imgSrc: '/images/habit-bind.png',
         imgAlt: `HabitBind action selection page`,
@@ -167,10 +171,10 @@ export const projects: Record<string, Project> = {
         shortDescription: 'The site you are viewing right now!',
         longDescription: [
             'This digital portfolio was built using Next.js and TypeScript. The goal was to give you a seamless experience,' +
-            ' optimizing site performance and putting my work in the spotlight with a minimal but elegant UI and satisfying' +
+            ' optimizing site performance and putting my work in the spotlight with a minimal but elegant UI and sharp' +
             ' interactions.',
         ],
-        imgSrc: '/portfolio',
+        imgSrc: '/images/portfolio.png',
         imgAlt: `Portfolio website about page`,
         date: '2025',
         relatedSkills: [
@@ -184,6 +188,7 @@ export const projects: Record<string, Project> = {
             Skills.GIT,
             Skills.TAILWIND,
         ],
+        url: 'https://github.com/dzbarcea/portfolio'
     },
     'discord-music-bot': {
         title: 'Discord Music Bot',
