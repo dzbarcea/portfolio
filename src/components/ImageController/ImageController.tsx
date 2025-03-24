@@ -21,7 +21,7 @@ const images = [
     },
 ];
 
-const defaultImgPath = '/cat-image.png';
+const defaultImgPath = '';
 const defaultImgAlt = 'Cat Image';
 
 const ImageController = () => {

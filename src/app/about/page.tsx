@@ -5,13 +5,14 @@ import Link from 'next/link';
 const Page = () => {
     return (
         <div className='flex items-start flex-col gap-2 pt-4 text-xl lg:w-1/2'>
-            <p>Hi, I’m David. I’m passionate about writing clean, efficient code and developing websites that
-                satisfy and engage users.</p>
-            <p>With 3 years of experience in Fullstack Development and UI/UX Design, I thrive in
-                environments where creativity and problem-solving come together. Click below to see
-                some of the projects I've worked on.</p>
+            <p>Hey, I’m David. I build clean, user-friendly websites that blend solid code with smart design.</p>
+            <p>With 3 years of experience in development and UI/UX, I love bringing creative ideas to life through thoughtful problem-solving.</p>
+            <p>Take a look at some of my work, or contact me via email or socials.</p>
 
-            <Link href='/work' className='border-container clickable py-2 px-4 rounded-full'>View My Work</Link>
+            <div className='flex place-self-center md:place-self-auto gap-2 pt-2'>
+                <Link href='/work' className='border-container clickable py-2 px-4 rounded-full'>View My Work</Link>
+                <Link href='/contact' className='border-container clickable py-2 px-4 rounded-full'>Contact Me</Link>
+            </div>
         </div>
     );
 }

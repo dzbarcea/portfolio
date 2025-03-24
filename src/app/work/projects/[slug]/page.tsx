@@ -21,7 +21,7 @@ const Page = () => {
                     <div className='flex items-start flex-col gap-8 lg:flex-row overflow-y-auto'>
                         {projectData.url ?
                             <Link href={projectData.url} target='_blank'
-                               className='flex-1 overflow-hidden rounded-xl relative group'>
+                               className='flex-1 overflow-hidden rounded-xl relative group border border-accent-darker'>
                                 <img
                                     src={projectData.imgSrc}
                                     alt={projectData.imgAlt}
@@ -33,7 +33,7 @@ const Page = () => {
                                 </div>
                             </Link>
                             :
-                            <div className='flex-1'>
+                            <div className='flex-1 border border-accent-darker rounded-xl'>
                                 <img
                                     src={projectData.imgSrc}
                                     alt={projectData.imgAlt}
