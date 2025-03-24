@@ -66,7 +66,7 @@ const Page = () => {
                     </div>
                     :
                     <>
-                        <h3>Looks like you've reached a page for a project that doesn't exist.</h3>
+                        <h3>Looks like you&apos;ve reached a page for a project that doesn&apos;t exist.</h3>
                         <Link href='/work'>View projects</Link>
                     </>
             }
