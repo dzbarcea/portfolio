@@ -148,4 +148,12 @@
     background-color: #555555;
   }
 
+  .perspective-container {
+    perspective: 1000px;
+  }
+
+  .translate-box {
+    background: white;
+    transform: translateZ(100px) rotateX(10deg) rotateY(-10deg);
+  }
 }
